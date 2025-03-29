@@ -1,4 +1,4 @@
-package payload;
+package com.poc.ecommerce.user.payload;
 
 import org.springframework.http.HttpStatus;
 

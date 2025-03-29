@@ -1,11 +1,11 @@
-package Exception;
+package com.poc.ecommerce.user.Exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import payload.ApiResponse;
+import com.poc.ecommerce.user.payload.ApiResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

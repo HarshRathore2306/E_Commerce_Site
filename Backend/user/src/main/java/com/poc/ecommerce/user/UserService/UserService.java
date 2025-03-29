@@ -1,10 +1,10 @@
-package UserService;
+package com.poc.ecommerce.user.UserService;
 
 import java.util.List;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 
-import UserEntity.UserEntity;
+import com.poc.ecommerce.user.UserEntity.UserEntity;
 
 public interface UserService {
     UserEntity getUserById(String userId);

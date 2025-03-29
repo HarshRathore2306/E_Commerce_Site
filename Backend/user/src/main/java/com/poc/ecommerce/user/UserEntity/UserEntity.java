@@ -1,13 +1,16 @@
-package UserEntity;
+package com.poc.ecommerce.user.UserEntity;
 
-import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "user_data")
 public class UserEntity {
     @Id

@@ -1,10 +1,10 @@
-package UserService;
+package com.poc.ecommerce.user.UserService;
 
 import java.util.List;
 
-import Exception.ResourceNotFoundException;
-import Repository.UserRepository;
-import UserEntity.UserEntity;
+import com.poc.ecommerce.user.Exception.ResourceNotFoundException;
+import com.poc.ecommerce.user.Repository.UserRepository;
+import com.poc.ecommerce.user.UserEntity.UserEntity;
 
 public class UserServiceImpl implements UserService {
 
