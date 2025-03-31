@@ -2,11 +2,50 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ServiceRegistryApplication",
+            "request": "launch",
+            "mainClass": "com.poc.ecommerce.ServiceRegistr.ServiceRegistryApplication"
+        },
+        {
+            "type": "java",
+            "name": "CartApplication",
+            "request": "launch",
+            "mainClass": "com.example.poc.cart.CartApplication"
+        },
+        {
+            "type": "java",
+            "name": "ProductApplication",
+            "request": "launch",
+            "mainClass": "com.poc.ecommerce.product.ProductApplication"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-UserApplication<user>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "mainClass": "com.poc.ecommerce.user.UserApplication",
             "projectName": "user",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=64263 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=user"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EcommerceApplication<ecommerce>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.poc.ecommerce.EcommerceApplication",
+            "projectName": "ecommerce",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceRegistryApplication<ServiceRegistr>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.poc.ecommerce.ServiceRegistr.ServiceRegistryApplication",
+            "projectName": "ServiceRegistr",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
