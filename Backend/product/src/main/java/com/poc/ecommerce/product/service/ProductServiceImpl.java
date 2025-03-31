@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.poc.ecommerce.product.Exception.ResourceNotFound;
 import com.poc.ecommerce.product.entity.Product;
 import com.poc.ecommerce.product.repository.ProductRepo;
 
@@ -22,20 +23,17 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product getProductById(String id) {
-        // TODO Auto-generated method stub
-        return productRepo.findById(id).orElse(null);
+        return productRepo.findById(id).orElseThrow(() -> new ResourceNotFound("Product not found with id: " + id));
 
     }
 
     @Override
     public List<Product> getAllProducts() {
-        // TODO Auto-generated method stub
         return productRepo.findAll();
     }
 
     @Override
     public Product updateProduct(String id, Product product) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'updateProduct'");
     }
 

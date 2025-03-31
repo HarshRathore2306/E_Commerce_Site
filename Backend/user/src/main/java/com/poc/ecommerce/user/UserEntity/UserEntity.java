@@ -33,5 +33,10 @@ public class UserEntity {
     private String role;
 
 
+    @Transient
+    private Cart cart;
+
+
+
 
 }
