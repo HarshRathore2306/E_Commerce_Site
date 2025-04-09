@@ -10,6 +10,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Cart {
 
+
+    private String cartId;
+    private String userId;
+
     
 
 }
