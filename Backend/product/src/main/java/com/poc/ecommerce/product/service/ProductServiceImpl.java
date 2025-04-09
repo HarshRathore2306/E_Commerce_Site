@@ -34,13 +34,22 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product updateProduct(String id, Product product) {
-        throw new UnsupportedOperationException("Unimplemented method 'updateProduct'");
+        return productRepo.findById(id).map(existingProduct -> {
+            existingProduct.setName(product.getName());
+            existingProduct.setDescription(product.getDescription());
+            existingProduct.setQuantity(product.getQuantity());
+            existingProduct.setPrice(product.getPrice());
+            existingProduct.setCategoryId(product.getCategoryId());
+            return productRepo.save(existingProduct);
+        }).orElseThrow(() -> new ResourceNotFound("Product not found with id: " + id));
     }
 
     @Override
     public void deleteProduct(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteProduct'");
+        productRepo.findById(id).map(existingProduct -> {
+            productRepo.delete(existingProduct);
+            return null;
+        }).orElseThrow(() -> new ResourceNotFound("Product not found with id: " + id));
     }
 
 }
