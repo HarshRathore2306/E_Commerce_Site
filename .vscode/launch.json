@@ -78,6 +78,16 @@
             "projectName": "cart",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiGateWayApplication<ApiGateWay>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.poc.ApiGateWay.ApiGateWayApplication",
+            "projectName": "ApiGateWay",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

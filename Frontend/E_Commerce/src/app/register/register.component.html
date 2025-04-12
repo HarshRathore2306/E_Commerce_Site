@@ -1,0 +1,72 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-warning text-dark">
+            <h4 class="text-center">Register New User</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="user_Name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="user_Name" formControlName="user_Name" required>
+                <div *ngIf="registerForm.controls['user_Name'].invalid && registerForm.controls['user_Name'].touched" class="text-danger">
+                  Name is required (min 3 characters).
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="user_Email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="user_Email" formControlName="user_Email" required>
+                <div *ngIf="registerForm.controls['user_Email'].invalid && registerForm.controls['user_Email'].touched" class="text-danger">
+                  Valid email is required.
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="user_Password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="user_Password" formControlName="user_Password" required>
+                <div *ngIf="registerForm.controls['user_Password'].invalid && registerForm.controls['user_Password'].touched" class="text-danger">
+                  Password is required (min 6 characters).
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="phone_Number" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phone_Number" formControlName="phone_Number" required>
+                <div *ngIf="registerForm.controls['phone_Number'].invalid && registerForm.controls['phone_Number'].touched" class="text-danger">
+                  Valid phone number (10 digits) is required.
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="user_Address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="user_Address" formControlName="user_Address" required>
+                <div *ngIf="registerForm.controls['user_Address'].invalid && registerForm.controls['user_Address'].touched" class="text-danger">
+                  Address is required.
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="role" class="form-label">Role</label>
+                <select class="form-control" id="role" formControlName="role" required>
+                  <option value="">Select Role</option>
+                  <option value="USER">User</option>
+                  <option value="ADMIN">Admin</option>
+                </select>
+                <div *ngIf="registerForm.controls['role'].invalid && registerForm.controls['role'].touched" class="text-danger">
+                  Role is required.
+                </div>
+              </div>
+  
+              <div class="text-center">
+                <button type="submit" class="btn btn-warning me-2" [disabled]="registerForm.invalid">Register</button>
+                <button type="button" class="btn btn-secondary" (click)="onReset()">Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

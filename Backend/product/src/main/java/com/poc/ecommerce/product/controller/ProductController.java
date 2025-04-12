@@ -36,11 +36,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productService.getProductById(productId));
     }
     
-    @GetMapping("/getAllProducts")
-    public ResponseEntity<List<Product>> getAllProducts() {
-        return ResponseEntity.status(HttpStatus.OK).body(productService.getAllProducts());
-    }
-
+  
     @PostMapping("/addProduct")
     public ResponseEntity<Product> addProduct(@RequestBody Product product) {
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.createProduct(product));

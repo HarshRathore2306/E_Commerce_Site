@@ -1,0 +1,13 @@
+.login-bg {
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1606813909028-7f2e5da19396'); /* cart/store theme */
+  background-size: cover;
+  background-position: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+}

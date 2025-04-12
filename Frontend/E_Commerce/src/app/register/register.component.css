@@ -1,0 +1,28 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  .card-header {
+    background-color: #f9a825; /* Yellow */
+    color: black;
+  }
+  
+  .card-body {
+    background-color: #000;
+    color: white;
+  }
+  
+  form .form-control {
+    background-color: #333;
+    color: white;
+  }
+  
+  button {
+    margin-top: 15px;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  
