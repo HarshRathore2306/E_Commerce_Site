@@ -1,31 +1,27 @@
 server:
-    port: 8085
-
+  port: 8085
 
 spring:
-    application:
-        name: API-Gateway
+  application:
+    name: API-Gateway
 
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://USER
+          predicates:
+            - Path=/users/**
 
+        - id: product-service
+          uri: lb://PRODUCT
+          predicates:
+            - Path=/product/**
 
-
-    cloud:
-        gateway:
-            routes:
-                - id: user
-                  uri: lb://user
-                  predicates:
-                    - Path=/users/**
-
-                - id: PRODUCT
-                  uri: lb://PRODUCT
-                  predicates:
-                    - Path=/product/**
-
-                - id: CART
-                  uri: lb://CART
-                  predicates:
-                    - Path=/cart/**
+        - id: cart-service
+          uri: lb://CART
+          predicates:
+            - Path=/cart/**
 
 eureka:
   client:
