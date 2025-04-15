@@ -1,41 +1,49 @@
-<div class="container mt-5">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">E-Commerce</a>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
-      <span class="navbar-text ms-auto">Hello, {{ userName }}</span>
-    </nav>
-  
-    <!-- Category Filter -->
-    <div class="mt-4">
-      <label class="form-label text-white">Filter by Category:</label>
-      <select class="form-select" [(ngModel)]="selectedCategory" (change)="filterByCategory(selectedCategory)">
-        <option value="">All Categories</option>
-        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-      </select>
-    </div>
-  
-    <!-- Product Grid -->
-    <div class="row mt-4">
-      <div class="col-md-4" *ngFor="let product of products">
-        <div class="card mb-4">
-          <img src="{{ product.imageUrl }}" class="card-img-top" alt="Product Image">
-          <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.description }}</p>
-            <p class="card-text"><strong>${{ product.price }}</strong></p>
-            <button class="btn btn-warning" (click)="addToCart(product)">Add to Cart</button>
-          </div>
+<div class="container mt-5 position-relative">
+  <!-- Admin Button (Top-Left) -->
+  <button class="btn btn-warning position-absolute top-0 start-0 m-2 rounded-circle px-3 py-2 fw-bold shadow"
+        style="font-size: 1.2rem; z-index: 9999; background-color: yellow; border: 2px solid black; color: black;"
+        (click)="navigateToAdmin()">
+  ⚙
+</button>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+    <a class="navbar-brand" href="#">E-Commerce</a>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
+    <span class="navbar-text ms-auto">Hello, {{ userName }}</span>
+  </nav>
+
+  <!-- Category Filter -->
+  <div class="mt-4">
+    <label class="form-label text-white">Filter by Category:</label>
+    <select class="form-select" [(ngModel)]="selectedCategory" (change)="filterByCategory(selectedCategory)">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="row mt-4">
+    <div class="col-md-4" *ngFor="let product of products">
+      <div class="card mb-4 product-card">
+        <img src="{{ product.imageUrl }}" class="card-img-top" alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text price"><strong>${{ product.price }}</strong></p>
+          <button class="btn btn-warning" (click)="addToCart(product)">Add to Cart</button>
+          <!-- Full Description (Hidden by default) -->
+          <p class="card-text full-description">{{ product.description }}</p>
         </div>
       </div>
     </div>
-  
-    <!-- Admin Button -->
-    <div class="mt-4 text-center">
-      <button class="btn btn-danger" (click)="navigateToAdmin()">Admin Management</button>
-    </div>
   </div>
-  
+
+  <!-- Checkout Button -->
+  <div class="mt-4 text-center">
+    <button class="btn btn-dark text-warning px-4 py-2 fw-bold" (click)="goToCheckout()">
+      🛒 Go to Cart
+    </button>
+  </div>
+</div>

@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../service/user-service.service';
+import { NgIf } from '@angular/common';
 // import { UserService } from './user.service';  // Service for handling user-related API calls
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,NgIf],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
