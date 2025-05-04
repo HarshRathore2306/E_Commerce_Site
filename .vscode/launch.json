@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Application",
+            "request": "launch",
+            "mainClass": "com.example.poc.ServiceDiscovery.Ecommerce.Application",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "CotegoriesApplication",
             "request": "launch",
             "mainClass": "com.example.poc.cotegories.CotegoriesApplication",
